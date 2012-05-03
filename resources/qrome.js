@@ -14901,11 +14901,7 @@ cljs.reader.read_string = function(a) {
   return cljs.reader.read.call(null, a, !0, null, !1)
 };
 var qrome = {start:function() {
-  var a = cljs.core.atom.call(null, "http://holder.com");
-  chrome.tabs.getSelected(null, function(b) {
-    return cljs.core.reset_BANG_.call(null, a, b.url)
-  });
-  return setTimeout.call(null, function() {
+  return chrome.tabs.getSelected(null, function(a) {
     var b = enfocus.core.nodes__GT_coll.call(null, document);
     cljs.core.doall.call(null, cljs.core.map.call(null, function(a) {
       enfocus.core.en_set_attr.call(null, "\ufdd0'style", "display: none").call(null, enfocus.core.css_select.call(null, "", a, cljs.core.PersistentVector.fromArray(["p.loading"])));
@@ -14913,10 +14909,10 @@ var qrome = {start:function() {
     }, b));
     b = enfocus.core.nodes__GT_coll.call(null, document);
     cljs.core.doall.call(null, cljs.core.map.call(null, function(b) {
-      enfocus.core.en_set_attr.call(null, "\ufdd0'src", cljs.core.str.call(null, "http://chart.apis.google.com/chart?cht=qr&chs=240x240&chld=L&choe=UTF-8&chl=", goog.string.urlEncode.call(null, cljs.core.deref.call(null, a)))).call(null, enfocus.core.css_select.call(null, "", b, cljs.core.PersistentVector.fromArray(["img.qrcode"])));
+      enfocus.core.en_set_attr.call(null, "\ufdd0'src", cljs.core.str.call(null, "http://chart.apis.google.com/chart?cht=qr&chs=240x240&chld=L&choe=UTF-8&chl=", goog.string.urlEncode.call(null, a.url))).call(null, enfocus.core.css_select.call(null, "", b, cljs.core.PersistentVector.fromArray(["img.qrcode"])));
       return b
     }, b));
     return document
-  }, 1E3)
+  })
 }};
 window.onload = qrome.start;
