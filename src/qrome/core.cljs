@@ -2,8 +2,7 @@
   (:require-macros [enfocus.macros :as em])
   (:require [enfocus.core :as ef]
             [clojure.string :as c.s]
-            [goog.string :as gstr]
-            [cljs.reader :as reader]))
+            [goog.string :as gstr]))
 
 (defn start []
   (let [base-url "http://chart.apis.google.com/chart?cht=qr&chs=240x240&chld=L&choe=UTF-8&chl="]
